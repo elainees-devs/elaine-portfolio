@@ -6,7 +6,7 @@ import SocialMedia from "../social-media-icons/SocialMedia";
 const Footer: React.FC = () => {
   return (
     <footer className="w-full mt-16 bg-slate-100 text-slateblue font-bold">
-      <div className="w-[80%] mx-auto flex flex-row justify-between items-start gap-8 p-6 rounded-lg border-2 border-gray-300">
+      <div className="grid grid-col w-[80%] mx-auto md:flex flex-row justify-between items-start gap-8 p-6 rounded-lg border-2 border-gray-300">
         {/* Logo & Info */}
         <div className="flex flex-col max-w-xs">
           <p className="mb-4 text-3xl md:text-4xl flex items-center">
