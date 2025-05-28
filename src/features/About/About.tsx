@@ -4,7 +4,7 @@ import Badge from "../../shared/ui/Badge";
 
 const About: React.FC = () => {
   return (
-    <section className="border-primary">
+    <section className="border-primary flex flex-col items-center">
       {/* Section label */}
       <div>
         <Badge text="About Me" />
