@@ -1,4 +1,3 @@
-// src/shared/ui/Badge.tsx
 import React from "react";
 
 interface BadgeProps {
@@ -14,7 +13,7 @@ const Badge: React.FC<BadgeProps> = ({ text, className }) => {
     <span
       className={`inline-block mb-6 py-2 px-4 w-36 border border-primary bg-primary/10 
       text-primary text-center font-bold rounded-full ${
-        isLargeText ? "text-[1.875rem]" : "text-sm md:text-base"
+        isLargeText ? "text-base md:text-[1.875rem]" : "text-sm md:text-base"
       } ${className || ""}`}
     >
       {text}
