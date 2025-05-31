@@ -9,7 +9,7 @@ const Portfolio: React.FC = () => {
     <>
       <div className="px-6 mt-8 min-h-screen">
         <Nav />
-        <h2 className="text-2xl text-center md:text-3xl font-bold mb-8 text-gray">My Projects</h2>
+        <h1 className="text-2xl text-center md:text-3xl font-bold mb-8 text-gray">My Projects</h1>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map(
             ({
