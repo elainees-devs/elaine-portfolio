@@ -3,7 +3,7 @@ import { Footer, Nav } from "../shared/layout";
 
 const About: React.FC = () => {
   return (
-      <>
+    <>
       {/* Nav with left margin */}
       <div className="m-8">
         <Nav />
@@ -11,9 +11,13 @@ const About: React.FC = () => {
 
       {/* Centered content with equal horizontal padding */}
       <div className="max-w-3xl mx-auto px-8 sm:px-6 lg:px-8 mt-8">
-        <h1 className="text-2xl text-center md:text-4xl font-bold my-6">About Me</h1>
+        <h1 className="text-2xl text-center md:text-3xl font-bold my-6">
+          About Me
+        </h1>
 
-        <h3 className="text-sm underline text-center md:text-xl font-semibold mb-2">Bio</h3>
+        <h3 className="text-sm underline text-center md:text-xl font-semibold mb-2">
+          Bio
+        </h3>
 
         <div className="text-sm md:text-lg text-customBlueGray leading-relaxed">
           <p>
@@ -22,12 +26,12 @@ const About: React.FC = () => {
             <span className="text-secondary font-semibold">
               MERN stack (MongoDB, Express.js, React, Node.js)
             </span>
-            . What makes me unique is my combination of technical expertise
-            and a business background—I hold a degree in Business Information
+            . What makes me unique is my combination of technical expertise and
+            a business background—I hold a degree in Business Information
             Technology and am a graduate of GOMYCODE Kenya's Full-Stack JS
             Bootcamp. I’m deeply passionate about building scalable,
-            user-focused web applications that solve real-world problems
-            through clean, efficient code.
+            user-focused web applications that solve real-world problems through
+            clean, efficient code.
           </p>
 
           <p className="mt-4">
@@ -35,10 +39,10 @@ const About: React.FC = () => {
             I’ve introduced young students to HTML, CSS, and Bootstrap in fun
             and engaging ways, nurturing the next generation of tech
             enthusiasts. My work allows me to create meaningful solutions with
-            real impact. Whether developing e-commerce platforms,
-            recipe-sharing apps, or AI-powered meal planners, I’m driven by
-            the belief that technology should serve people and communities,
-            improving lives and creating opportunities.
+            real impact. Whether developing e-commerce platforms, recipe-sharing
+            apps, or AI-powered meal planners, I’m driven by the belief that
+            technology should serve people and communities, improving lives and
+            creating opportunities.
           </p>
 
           <p className="mt-4">
@@ -46,14 +50,14 @@ const About: React.FC = () => {
             Python frameworks like Django and Flask, secure payment
             integrations, cloud services, database optimization, and AI
             integration. I’m excited to collaborate on projects and roles that
-            challenge me to grow as both a developer and a problem solver,
-            while staying true to my mission of using technology to empower
-            and uplift.
+            challenge me to grow as both a developer and a problem solver, while
+            staying true to my mission of using technology to empower and
+            uplift.
           </p>
 
-          <blockquote className="mt-8 p-4 italic text-navy bg-tealAccent pl-4 font-robotoSlab rounded-lg shadow-md">
-            “Technology is most powerful when it empowers people and
-            transforms communities.”
+          <blockquote className="mt-8 p-4 text-lg italic text-navy bg-tealAccent pl-4 font-robotoSlab rounded-lg shadow-md">
+            “Technology is most powerful when it empowers people and transforms
+            communities.”
           </blockquote>
         </div>
       </div>
