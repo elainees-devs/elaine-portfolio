@@ -5,7 +5,7 @@ import { Footer } from "../shared/layout";
 const Home = () => {
   return (
     <>
-      <div className="m-8">
+      <div className="m-4">
         <Header />
         <Hero />
         <About />
