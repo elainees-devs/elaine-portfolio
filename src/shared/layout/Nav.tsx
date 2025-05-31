@@ -33,7 +33,7 @@ const Nav: React.FC = () => {
 
       {/* Dropdown menu - visible on small screens when open */}
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-40 bg-white rounded-lg shadow-lg flex flex-col z-50 md:hidden">
+        <div className="absolute top-full mt-2 w-40 bg-white rounded-lg shadow-lg flex flex-col z-50 md:hidden">
           {navItems.map((item) => (
             <Link
               key={item.name}
