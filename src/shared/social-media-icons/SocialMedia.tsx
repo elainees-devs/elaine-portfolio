@@ -3,7 +3,7 @@ import { socialLinks } from "../../constants/socialLinks";
 
 const SocialMedia = () => {
   return (
-    <div className="flex flex-col items-start space-y-4">
+    <div className="flex flex-col items-center space-y-4">
       <h2 className="text-lg text-customBlueGray font-semibold">
         Connect with Me
       </h2>
