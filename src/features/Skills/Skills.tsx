@@ -4,7 +4,7 @@ import Badge from "../../shared/ui/Badge";
 
 const Skills: React.FC = () => {
   return (
-    <div className="mt-8 flex flex-col items-center justify-center px-4">
+    <div className="flex flex-col items-center justify-center px-4">
       {/* Use Badge for section title */}
       <Badge text="My Skills" />
       <p className="text-sm sm:text-base md:text-lg text-gray-400 text-center">
