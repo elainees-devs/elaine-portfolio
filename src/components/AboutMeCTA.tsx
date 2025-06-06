@@ -22,9 +22,9 @@ const AboutMeCTA = () => {
       />
 
       <button
-        className="border border-primary rounded-full py-3 px-4 flex items-center justify-center
+        className="border border-white rounded-full py-3 px-4 flex items-center justify-center
   text-sm sm:text-base lg:text-lg gap-2 w-full sm:w-auto
-  text-navy hover:text-slateblue hover:border-slateblue transition duration-300"
+  text-navy"
         onClick={() => handleResumeDownload()}
       >
         Download my resume{" "}
