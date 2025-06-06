@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
       {/* Hamburger button - visible only on small screens */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden text-gray-700 hover:text-orange-500"
+        className="md:hidden text-gray-700 hover:text-secondary"
         aria-label="Toggle navigation"
       >
         {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
@@ -24,7 +24,7 @@ const Nav: React.FC = () => {
           <Link
             key={item.name}
             to={item.path}
-            className="text-gray-700 hover:text-tealAccent font-semibold"
+            className="text-gray-700 hover:text-secondary font-semibold"
           >
             {item.name}
           </Link>
