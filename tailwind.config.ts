@@ -5,8 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        robotoSlab: ['"Roboto Slab"', "serif"],
+         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
         primary: "#0099ff",
@@ -19,7 +18,7 @@ const config: Config = {
     },
   },
   corePlugins: {
-    preflight: false, // optional, disable base styles if you want
+    preflight: false, 
   },
   plugins: [],
 };
