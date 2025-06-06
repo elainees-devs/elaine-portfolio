@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <div className="-mt-8 flex flex-col items-center justify-center min-h-screen px-4 py-10">
       <Badge text="Projects" />
-      <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-8 text-center">
+      <p className="text-sm sm:text-base md:text-lg text-white mb-8 text-center">
         Explore my projects and contributions.
       </p>
 
