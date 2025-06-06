@@ -5,7 +5,7 @@ import { AgriNext, Edusynx, MerExpress } from "./features/Projects";
 
 function App() {
   return (
-    <div className="text-white h-screen">
+    <div className="text-white h-screen px-4">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
