@@ -55,7 +55,7 @@ const About: React.FC = () => {
             uplift.
           </p>
 
-          <blockquote className="mt-8 p-4 text-lg italic text-navy bg-tealAccent pl-4 font-robotoSlab rounded-lg shadow-md">
+          <blockquote className="mt-8 p-4 text-lg italic text-navy bg-secondary pl-4 font-robotoSlab rounded-lg shadow-md">
             “Technology is most powerful when it empowers people and transforms
             communities.”
           </blockquote>
