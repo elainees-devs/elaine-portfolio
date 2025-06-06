@@ -10,20 +10,27 @@ const Hero = () => {
     <>
       <section className="flex flex-col md:flex-row items-center justify-between px-6 py-10 md:py-20">
         {/* Text Section */}
-        <div className="md:-mt-28 w-full md:w-1/2">
+        <div className="w-full md:w-1/2">
           <Badge text="hello" />
 
           {/* Main Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-white">
-            I'm <span className="text-primary">Elaine Muhombe,</span>
-            <br />A MERN Developer
+          <h2 className="text-xl md:text-6xl leading-tight text-white">
+            I'm <span className="text-secondary">Elaine Muhombe,</span>
           </h2>
 
+          <h3 className="mt-4 text-xl sm:text-2xl md:text-2xl font-medium text-white">
+            a MERN Stack Developer passionate about building intuitive and
+            scalable web applications.
+          </h3>
+
           {/* Subheading */}
-          <h4 className="mt-6 text-base sm:text-lg md:text-xl lg:text-2xl text-tealAccent font-semibold">
-            Building Scalable Applications with Seamless Integration and
-            Innovative Solutions
-          </h4>
+          <p className="mt-6 text-base sm:text-lg md:text-[1rem] text-secondary max-w-4xl">
+            I specialize in developing full-stack solutions using MongoDB,
+            Express.js, React, and Node.js. With a strong foundation in
+            JavaScript and hands-on experience creating responsive,
+            user-friendly interfaces and robust back-end systems, I bring ideas
+            to life through clean code and modern development practices.
+          </p>
 
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-4">
@@ -38,7 +45,7 @@ const Hero = () => {
                   "https://mail.google.com/mail/?view=cm&to=emuhombe@gmail.com"
                 )
               }
-              className="px-4 py-2 text-sm md:text-lg font-semibold text-white bg-transparent border border-primary hover:bg-accent transition-colors duration-300 rounded-full"
+              className="px-4 py-2 text-sm md:text-lg font-semibold text-white bg-transparent border border-secondary hover:bg-accent transition-colors duration-300 rounded-full"
             >
               Hire Me
             </button>
