@@ -8,8 +8,7 @@
     "deploy": "vercel --prod"
   },
   "dependencies": {
-    "mongodb": "^7.2.0",
-    "mongoose": "^8.0.0"
+    "nodemailer": "^8.0.0"
   },
   "devDependencies": {
     "vercel": "^54.4.1"

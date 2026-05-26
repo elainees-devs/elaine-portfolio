@@ -1,25 +1,16 @@
-const mongoose = require('mongoose');
-const Message = require('./models/Message');
+const nodemailer = require('nodemailer');
 
-const MONGODB_URI = process.env.MONGODB_URI;
-if (!MONGODB_URI) throw new Error('MONGODB_URI environment variable is not set');
-
-let cached = global.mongoose;
-if (!cached) {
-  cached = global.mongoose = { conn: null, promise: null };
+const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_RECIPIENT } = process.env;
+if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_RECIPIENT) {
+  throw new Error('SMTP_* and CONTACT_RECIPIENT environment variables must be set');
 }
 
-async function connectDB() {
-  if (cached.conn) return cached.conn;
-  if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
-      bufferCommands: false,
-      maxPoolSize: 1
-    }).then(m => m);
-  }
-  cached.conn = await cached.promise;
-  return cached.conn;
-}
+const transporter = nodemailer.createTransport({
+  host: SMTP_HOST,
+  port: Number(SMTP_PORT),
+  secure: Number(SMTP_PORT) === 465,
+  auth: { user: SMTP_USER, pass: SMTP_PASS }
+});
 
 const rateLimitMap = new Map();
 
@@ -79,17 +70,29 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    await connectDB();
-    const msg = await Message.create({
-      name: name.trim(),
-      email: email.trim(),
-      subject: subject.trim(),
-      message: message.trim()
+    await transporter.sendMail({
+      from: `"${name}" <${SMTP_USER}>`,
+      replyTo: email.trim(),
+      to: CONTACT_RECIPIENT,
+      subject: `[Portfolio Contact] ${subject.trim()}`,
+      text: `From: ${name.trim()} (${email.trim()})\nSubject: ${subject.trim()}\n\nMessage:\n${message.trim()}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:600px;">
+          <tr><td style="padding:8px;font-weight:bold;color:#333;">Name</td><td style="padding:8px;">${name.trim()}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;color:#333;background:#f5f5f5;">Email</td><td style="padding:8px;background:#f5f5f5;">${email.trim()}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;color:#333;">Subject</td><td style="padding:8px;">${subject.trim()}</td></tr>
+        </table>
+        <hr style="margin:16px 0;">
+        <h3>Message</h3>
+        <p style="white-space:pre-wrap;color:#555;">${message.trim()}</p>
+      `
     });
-    console.log('Contact message saved:', msg._id);
+
+    console.log('Contact email sent from:', email.trim());
     return res.status(200).set(headers).json({ success: true, message: 'Message sent successfully' });
   } catch (err) {
-    console.error('Failed to save contact message:', err);
+    console.error('Failed to send contact email:', err);
     return res.status(500).set(headers).json({
       error: 'Server error. Please email me directly at emuhombe@gmail.com'
     });
