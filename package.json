@@ -1,0 +1,17 @@
+{
+  "name": "elainees-devs-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MERN Stack Developer Portfolio",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "mongodb": "^7.2.0",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  }
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elaine's Devs — MERN Stack Developer</title>
+  <meta name="description" content="MERN Stack Developer specializing in scalable backend systems, cloud infrastructure, and full-stack applications.">
+  <meta name="keywords" content="MERN, Full Stack, Backend, Node.js, React, MongoDB, TypeScript, Developer, Portfolio">
+  <meta name="author" content="Elaine's Devs">
+  <meta property="og:title" content="Elaine's Devs — MERN Stack Developer">
+  <meta property="og:description" content="Scalable backend systems, cloud infrastructure, and full-stack applications.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+  <a href="#main" class="sr-only skip-link">Skip to main content</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="#" class="navbar-logo">Elaine<span>Devs</span></a>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="hero" aria-label="Hero section">
+      <div class="hero-bg">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+      </div>
+      <div class="hero-particles"></div>
+      <div class="container">
+        <div class="hero-content" data-reveal>
+          <div class="hero-badge">
+            <i data-lucide="terminal"></i>
+            <span>Available for projects</span>
+          </div>
+          <h1 class="hero-title">
+            Building the future, <br><span>one system at a time</span>
+          </h1>
+          <p class="hero-subtitle">
+            <span id="typing-text"></span><span class="typing-cursor"></span>
+          </p>
+          <p class="hero-description">
+            I design and build scalable backend systems, cloud-native APIs, and full-stack applications
+            that drive real business impact. From IT support to software engineering — I bring reliability
+            and performance to every project.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="eye"></i> View Projects
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i data-lucide="mail"></i> Contact Me
+            </a>
+            <a href="/assets/Elaine_Muhombe_Resume.pdf" class="btn-text" download>
+              <i data-lucide="download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="hero-image" data-reveal data-delay="200">
+          <div class="hero-image-wrapper">
+            <div class="profile-placeholder">
+              <i data-lucide="code-2" style="width:80px;height:80px;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-label="About me">
+      <div class="container">
+        <div class="section-label" data-reveal>About Me</div>
+        <h2 class="section-title" data-reveal data-delay="100">From IT support to <span class="gradient-text">software engineering</span></h2>
+        <div class="about-grid">
+          <div class="about-text" data-reveal data-delay="200">
+            <p>
+              My journey started in IT support, where I developed a deep appreciation for reliable,
+              well-architected systems. That foundation taught me to build software that doesn't just
+              work — it endures. Today, I specialize in backend development with the MERN stack,
+              designing RESTful APIs, and architecting cloud-ready solutions.
+            </p>
+            <p>
+              I'm passionate about <strong>scalable system design</strong>, <strong>API development</strong>,
+              and bridging the gap between infrastructure and application logic. Every project I take on
+              is an opportunity to build something that makes a difference.
+            </p>
+          </div>
+          <div class="about-stats" data-reveal data-delay="300">
+            <div class="stat-card">
+              <div class="stat-number" data-count="15" data-count-suffix="+">0</div>
+              <div class="stat-label">Technologies Learned</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="12" data-count-suffix="+">0</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="30" data-count-suffix="+">0</div>
+              <div class="stat-label">APIs Built</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="8" data-count-suffix="+">0</div>
+              <div class="stat-label">Backend Systems Designed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-label="Skills and technologies">
+      <div class="container">
+        <div class="section-label" data-reveal>Skills & Technologies</div>
+        <h2 class="section-title" data-reveal data-delay="100">My <span class="gradient-text">technical arsenal</span></h2>
+        <p class="section-subtitle" data-reveal data-delay="150">
+          Technologies I work with daily to build production-ready applications.
+        </p>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" aria-label="Projects">
+      <div class="container">
+        <div class="section-label" data-reveal>Projects</div>
+        <h2 class="section-title" data-reveal data-delay="100">What I've <span class="gradient-text">built</span></h2>
+        <p class="section-subtitle" data-reveal data-delay="150">
+          Real-world applications and systems I've designed, built, and shipped.
+        </p>
+        <div class="projects-controls" data-reveal>
+          <button class="filter-btn active" data-filter="All">All</button>
+          <button class="filter-btn" data-filter="React">React</button>
+          <button class="filter-btn" data-filter="Node.js">Node.js</button>
+          <button class="filter-btn" data-filter="MongoDB">MongoDB</button>
+          <button class="filter-btn" data-filter="TypeScript">TypeScript</button>
+          <button class="filter-btn" data-filter="Full Stack">Full Stack</button>
+          <button class="filter-btn" data-filter="Backend">Backend</button>
+          <button class="filter-btn" data-filter="Django">Django</button>
+          <button class="filter-btn" data-filter="Python">Python</button>
+          <select class="sort-select" aria-label="Sort projects">
+            <option value="latest">Latest</option>
+            <option value="az">A–Z</option>
+            <option value="complexity">Most Complex</option>
+          </select>
+        </div>
+        <div class="projects-grid"></div>
+        <div class="pagination">
+          <button class="pagination-btn prev" aria-label="Previous page">← Prev</button>
+          <span class="pagination-info">Page 1 of 1</span>
+          <button class="pagination-btn next" aria-label="Next page">Next →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" aria-label="Development process">
+      <div class="container">
+        <div class="section-label" data-reveal>My Process</div>
+        <h2 class="section-title" data-reveal data-delay="100">How I <span class="gradient-text">approach every project</span></h2>
+        <p class="section-subtitle" data-reveal data-delay="150">
+          A structured engineering process from problem discovery to deployment.
+        </p>
+        <div class="process-timeline" data-reveal>
+          <div class="process-step" data-reveal data-delay="100">
+            <div class="process-step-number">Step 01</div>
+            <h3 class="process-step-title">Understand the Business Problem</h3>
+            <p class="process-step-desc">I start by understanding the real problem — not just the technical requirements, but the business context and user needs behind them.</p>
+          </div>
+          <div class="process-step" data-reveal data-delay="200">
+            <div class="process-step-number">Step 02</div>
+            <h3 class="process-step-title">Research & Plan</h3>
+            <p class="process-step-desc">Thorough research into the best tools, architecture patterns, and approaches. I plan for scalability from day one.</p>
+          </div>
+          <div class="process-step" data-reveal data-delay="300">
+            <div class="process-step-number">Step 03</div>
+            <h3 class="process-step-title">Design the Architecture</h3>
+            <p class="process-step-desc">I design clean, modular architecture with clear separation of concerns — API layer, business logic, data access, and infrastructure.</p>
+          </div>
+          <div class="process-step" data-reveal data-delay="400">
+            <div class="process-step-number">Step 04</div>
+            <h3 class="process-step-title">Build API & Frontend</h3>
+            <p class="process-step-desc">Iterative development with regular feedback loops. I build the backend API first, then connect the frontend — always with testing in mind.</p>
+          </div>
+          <div class="process-step" data-reveal data-delay="500">
+            <div class="process-step-number">Step 05</div>
+            <h3 class="process-step-title">Test & Optimize</h3>
+            <p class="process-step-desc">Rigorous testing — unit, integration, and performance. I optimize database queries, API response times, and frontend bundle sizes.</p>
+          </div>
+          <div class="process-step" data-reveal data-delay="600">
+            <div class="process-step-number">Step 06</div>
+            <h3 class="process-step-title">Deploy & Maintain</h3>
+            <p class="process-step-desc">Deployment with CI/CD pipelines, monitoring, and ongoing maintenance. I ensure the system stays reliable and performant in production.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advantage" aria-label="Competitive advantage">
+      <div class="container">
+        <div class="section-label" data-reveal>Why Work With Me</div>
+        <h2 class="section-title" data-reveal data-delay="100">My <span class="gradient-text">competitive advantage</span></h2>
+        <p class="section-subtitle" data-reveal data-delay="150">
+          What sets me apart as a developer and engineering partner.
+        </p>
+        <div class="advantage-grid">
+          <div class="advantage-card" data-reveal data-delay="100">
+            <div class="advantage-icon"><i data-lucide="server"></i></div>
+            <h3 class="advantage-title">Backend-First Engineering</h3>
+            <p class="advantage-desc">I prioritize clean API design, efficient database schemas, and robust server architecture — the foundation every great app is built on.</p>
+          </div>
+          <div class="advantage-card" data-reveal data-delay="200">
+            <div class="advantage-icon"><i data-lucide="graduation-cap"></i></div>
+            <h3 class="advantage-title">Continuous Learner</h3>
+            <p class="advantage-desc">From IT support to modern full-stack development. I'm always learning — currently exploring AWS, DevOps practices, and AI integration.</p>
+          </div>
+          <div class="advantage-card" data-reveal data-delay="300">
+            <div class="advantage-icon"><i data-lucide="cloud"></i></div>
+            <h3 class="advantage-title">Cloud & DevOps Aware</h3>
+            <p class="advantage-desc">I build with deployment in mind — CI/CD, Docker, cloud infrastructure, and monitoring are part of my workflow, not afterthoughts.</p>
+          </div>
+        </div>
+        <div class="advantage-cta" data-reveal>
+          <p>
+            Focused on <span>cloud computing</span>, <span>scalable systems</span>,
+            <span>AI</span>, and <span>automation</span> — I build technology that grows with your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" aria-label="Testimonials">
+      <div class="container">
+        <div class="section-label" data-reveal>Testimonials</div>
+        <h2 class="section-title" data-reveal data-delay="100">What <span class="gradient-text">people say</span></h2>
+        <div class="testimonials-grid" id="testimonials-grid"></div>
+        <div class="badges-wrapper" data-reveal>
+          <span class="badge">Currently Learning: AWS</span>
+          <span class="badge">Currently Learning: DevOps</span>
+          <span class="badge">MERN Stack</span>
+          <span class="badge">API Development</span>
+          <span class="badge">ALX Backend</span>
+          <a href="#" class="badge" style="text-decoration:none;">Open Source Contributions</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-label="Contact">
+      <div class="container">
+        <div class="section-label" data-reveal>Get In Touch</div>
+        <h2 class="section-title" data-reveal data-delay="100">Let's <span class="gradient-text">build something great</span></h2>
+        <p class="section-subtitle" data-reveal data-delay="150">
+          Have a project in mind? Let's talk about how we can work together.
+        </p>
+        <form class="contact-form" id="contact-form" novalidate data-reveal>
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Name</label>
+            <input type="text" id="contact-name" class="form-input" placeholder="Your name" required autocomplete="name">
+            <div class="form-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email</label>
+            <input type="email" id="contact-email" class="form-input" placeholder="your@email.com" required autocomplete="email">
+            <div class="form-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Subject</label>
+            <input type="text" id="contact-subject" class="form-input" placeholder="What's this about?" required>
+            <div class="form-error"></div>
+          </div>
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Message</label>
+            <textarea id="contact-message" class="form-textarea" placeholder="Tell me about your project..." required></textarea>
+            <div class="form-error"></div>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <span class="btn-text-content"><i data-lucide="send"></i> Send Message</span>
+          </button>
+          <div class="form-fallback" style="display:none;margin-top:1rem;padding:1rem;border-radius:var(--radius-md);background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.2);color:var(--color-text-secondary);font-size:0.9rem;text-align:center;">
+            Failed to send via server. Please email me directly at <a href="mailto:hello@elainees.dev">hello@elainees.dev</a>
+          </div>
+        </form>
+        <div class="form-success" data-reveal>
+          <div class="form-success-icon"><i data-lucide="check-circle"></i></div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-social">
+        <a href="https://github.com/elainees" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i data-lucide="github"></i>
+        </a>
+        <a href="https://linkedin.com/in/elainees" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i data-lucide="linkedin"></i>
+        </a>
+        <a href="mailto:hello@elainees.dev" aria-label="Email">
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; <span id="year"></span> Elaine's Devs. Built with the MERN stack.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/js/utils.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/hero.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/projects.js"></script>
+  <script src="/js/contact.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelector('.skip-link')?.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('main')?.focus();
+    });
+  </script>
+</body>
+</html>
