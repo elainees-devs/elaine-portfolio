@@ -2,3 +2,5 @@
 .env.development
 .plan
 node_modules
+.vercel
+.env*

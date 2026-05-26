@@ -12,6 +12,6 @@
     "mongoose": "^8.0.0"
   },
   "devDependencies": {
-    "vercel": "^34.0.0"
+    "vercel": "^54.4.1"
   }
 }
