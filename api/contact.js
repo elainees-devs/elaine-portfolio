@@ -91,7 +91,7 @@ module.exports = async function handler(req, res) {
   } catch (err) {
     console.error('Failed to save contact message:', err);
     return res.status(500).set(headers).json({
-      error: 'Server error. Please email me directly at hello@elainees.dev'
+      error: 'Server error. Please email me directly at emuhombe@gmail.com'
     });
   }
 };

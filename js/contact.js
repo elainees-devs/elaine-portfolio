@@ -95,7 +95,7 @@ function initContactForm() {
       if (fallbackMsg) {
         fallbackMsg.classList.add('visible');
       } else {
-        alert('Failed to send. Please email me directly at hello@elainees.dev');
+        alert('Failed to send. Please email me directly at emuhombe@gmail.com');
       }
     }
   });
