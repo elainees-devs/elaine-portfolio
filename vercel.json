@@ -3,8 +3,7 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/api/(.*)", "dest": "/api/$1" }
   ],
   "headers": [
     {
