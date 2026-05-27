@@ -5,11 +5,17 @@ if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !CONTACT_RECIPIENT) 
   throw new Error('SMTP_* and CONTACT_RECIPIENT environment variables must be set');
 }
 
+const isSecure = Number(SMTP_PORT) === 465;
+
 const transporter = nodemailer.createTransport({
   host: SMTP_HOST,
   port: Number(SMTP_PORT),
-  secure: Number(SMTP_PORT) === 465,
-  auth: { user: SMTP_USER, pass: SMTP_PASS }
+  secure: isSecure,
+  requireTLS: !isSecure,
+  auth: { user: SMTP_USER, pass: SMTP_PASS },
+  connectionTimeout: 5000,
+  greetingTimeout: 5000,
+  socketTimeout: 8000
 });
 
 const rateLimitMap = new Map();
@@ -92,7 +98,7 @@ module.exports = async function handler(req, res) {
     console.log('Contact email sent from:', email.trim());
     return res.status(200).set(headers).json({ success: true, message: 'Message sent successfully' });
   } catch (err) {
-    console.error('Failed to send contact email:', err);
+    console.error('Failed to send contact email:', err.code, err.message, err.command);
     return res.status(500).set(headers).json({
       error: 'Server error. Please email me directly at emuhombe@gmail.com'
     });
