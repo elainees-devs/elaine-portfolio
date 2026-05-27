@@ -42,23 +42,31 @@ function checkRateLimit(ip) {
 }
 
 module.exports = async function handler(req, res) {
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type'
-  };
+  function sendJson(status, data) {
+    res.writeHead(status, {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    }).end(JSON.stringify(data));
+  }
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).set(headers).end();
+    res.writeHead(204, {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type'
+    }).end();
+    return;
   }
 
   if (req.method !== 'POST') {
-    return res.status(405).set(headers).json({ error: 'Method not allowed' });
+    return sendJson(405, { error: 'Method not allowed' });
   }
 
   const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
   if (!checkRateLimit(ip)) {
-    return res.status(429).set(headers).json({
+    return sendJson(429, {
       error: 'Too many requests. Please try again in a minute.'
     });
   }
@@ -72,7 +80,7 @@ module.exports = async function handler(req, res) {
   if (!message || message.trim().length < 10) errors.push('Message must be at least 10 characters');
 
   if (errors.length) {
-    return res.status(400).set(headers).json({ error: errors.join('; ') });
+    return sendJson(400, { error: errors.join('; ') });
   }
 
   try {
@@ -96,10 +104,10 @@ module.exports = async function handler(req, res) {
     });
 
     console.log('Contact email sent from:', email.trim());
-    return res.status(200).set(headers).json({ success: true, message: 'Message sent successfully' });
+    return sendJson(200, { success: true, message: 'Message sent successfully' });
   } catch (err) {
     console.error('Failed to send contact email:', err.code, err.message, err.command);
-    return res.status(500).set(headers).json({
+    return sendJson(500, {
       error: 'Server error. Please email me directly at emuhombe@gmail.com'
     });
   }
