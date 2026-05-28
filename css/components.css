@@ -256,6 +256,11 @@
   flex-wrap: wrap;
 }
 
+.hero-cta-row {
+  display: flex;
+  gap: 5rem;
+}
+
 .btn-text {
   display: inline-flex;
   align-items: center;
