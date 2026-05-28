@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof portfolioData === 'undefined' || !portfolioData) {
+    console.error('portfolioData is not defined. Check that data.js loaded correctly.');
+    return;
+  }
+
   initNavigation();
   initTypingAnimation();
   initParticles();

@@ -18,6 +18,11 @@ const transporter = nodemailer.createTransport({
   socketTimeout: 8000
 });
 
+function escapeHtml(str) {
+  const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#x27;' };
+  return str.replace(/[&<>"']/g, c => map[c]);
+}
+
 const rateLimitMap = new Map();
 
 function checkRateLimit(ip) {
@@ -93,13 +98,13 @@ module.exports = async function handler(req, res) {
       html: `
         <h2>New Contact Form Submission</h2>
         <table style="border-collapse:collapse;width:100%;max-width:600px;">
-          <tr><td style="padding:8px;font-weight:bold;color:#333;">Name</td><td style="padding:8px;">${name.trim()}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#333;background:#f5f5f5;">Email</td><td style="padding:8px;background:#f5f5f5;">${email.trim()}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold;color:#333;">Subject</td><td style="padding:8px;">${subject.trim()}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;color:#333;">Name</td><td style="padding:8px;">${escapeHtml(name.trim())}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;color:#333;background:#f5f5f5;">Email</td><td style="padding:8px;background:#f5f5f5;">${escapeHtml(email.trim())}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;color:#333;">Subject</td><td style="padding:8px;">${escapeHtml(subject.trim())}</td></tr>
         </table>
         <hr style="margin:16px 0;">
         <h3>Message</h3>
-        <p style="white-space:pre-wrap;color:#555;">${message.trim()}</p>
+        <p style="white-space:pre-wrap;color:#555;">${escapeHtml(message.trim())}</p>
       `
     });
 
