@@ -8,7 +8,7 @@ const portfolioData = {
       tech: ['React', 'Node.js', 'PostgreSQL', 'TypeScript', 'Docker'],
       category: ['React', 'Node.js', 'TypeScript', 'Full Stack'],
       github: 'https://github.com/elainees-devs/elimu-sight.git',
-      demo: 'https://elimu-sight-la4w2m714-elaines-projects-2030e2b2.vercel.app/',
+      demo: '',
       complexity: 5,
       date: '2026-05'
     },
