@@ -75,8 +75,13 @@ function initProjects() {
     initScrollAnimations();
 
     prevBtn.disabled = currentPage <= 1;
+    prevBtn.setAttribute('aria-disabled', currentPage <= 1);
     nextBtn.disabled = currentPage >= totalPages;
+    nextBtn.setAttribute('aria-disabled', currentPage >= totalPages);
     pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+
+    const firstCard = grid.querySelector('.project-card');
+    if (firstCard) { firstCard.setAttribute('tabindex', '-1'); firstCard.focus(); }
   }
 
   filterBtns.forEach(btn => {
